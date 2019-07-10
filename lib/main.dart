@@ -21,6 +21,12 @@ class _CameraAppState extends State<CameraApp> {
       image = img;
       setState(() {});
     }
+    cropper(image);
+  }
+
+  cropper(File file) async {
+    image=await ImageCropper.cropImage(sourcePath: file.path);
+    setState(() {});
   }
 
   @override
